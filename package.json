@@ -1,0 +1,27 @@
+{
+  "name": "umapi_geo_city",
+  "version": "1.0.0",
+  "description": "Поиск ближайшего города по координатам",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SashokNekulin/umapi_geo_city.git"
+  },
+  "keywords": [
+    "umapi",
+    "geo",
+    "city",
+    "rus",
+    "search",
+    "city list"
+  ],
+  "author": "Alexandr Nikulin <nekulin@mail.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SashokNekulin/umapi_geo_city/issues"
+  },
+  "homepage": "https://github.com/SashokNekulin/umapi_geo_city#readme"
+}
