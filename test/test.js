@@ -4,8 +4,15 @@ const set = new GEO()
 
 set.loadCityList()
 
-// console.log('CIRCLE', set.getListCircle(54.7073218, 20.5072458, 30))
 
-// console.log('POLIGON', set.getListPoligon(54.7073218, 20.5072458, 54.0, 20.0))
 
-// console.log('DISTANCE', set.distance(54.7073218, 20.5072458, 54.0, 20.0))
+const
+    // Широта координаты первой вершины
+    latOne = 54.707,
+    // Долгота координаты первой вершины
+    lngOne = 20.507,
+    // Широта координаты второй вершины
+    latTwo =  54.001,
+    // Долгота координаты второй вершины
+    lngTwo =  20.001
+console.log(set.getListPoligon(latOne, lngOne, latTwo, lngTwo))
