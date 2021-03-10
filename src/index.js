@@ -23,6 +23,12 @@ module.exports = class GEO {
     addList(arg) {
         this.geo.insert(arg)
     }
+    /**
+     * Отчистить список текущий список объектов
+     */
+    clearList(){
+        this.geo = new GeoTree();
+    }
 
     /**
      * Получить весь текущий список объектов
