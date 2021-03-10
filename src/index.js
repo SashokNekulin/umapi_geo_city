@@ -20,13 +20,13 @@ module.exports = class GEO {
      * Добавить обьект в текущий список объектов
      * @param {*} arg объект или масив объектов (обязательные свойства обьекта: lat - Широта, lng - Долгота)
      */
-    addList(arg) {
+    addGeoList(arg) {
         this.geo.insert(arg)
     }
     /**
-     * Отчистить список текущий список объектов
+     * Очистить текущий список объектов
      */
-    clearList(){
+    clearGeoList(){
         this.geo = new GeoTree();
     }
 
