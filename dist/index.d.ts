@@ -1,43 +1,24 @@
-const GeoTree = require('./geo-tree')
-const CityList = require('../lib/data.min.json')
-const distance = require('./geo-dist')
-const compare = require('./compare')
-
-module.exports = class GEO {
-
-    constructor() {
-        this.distance = distance
-        this.geo = new GeoTree();
-    }
-
+export default class Geo {
+    geo: any;
+    constructor();
     /**
      * Загрузить список городов России
      */
-    loadCityList() {
-        this.geo.insert(CityList)
-    }
+    loadCityList(): void;
     /**
      * Добавить обьект в текущий список объектов
      * @param {*} arg объект или масив объектов (обязательные свойства обьекта: lat - Широта, lng - Долгота)
      */
-    addGeoList(arg) {
-        this.geo.insert(arg)
-    }
+    addGeoList(arg: any): void;
     /**
      * Очистить текущий список объектов
      */
-    clearGeoList(){
-        this.geo = new GeoTree();
-    }
-
+    clearGeoList(): void;
     /**
      * Получить весь текущий список объектов
      * @return {[]}  текущий список объектов
      */
-    getGeoList() {
-        return this.geo.find()
-    }
-
+    getGeoList(): any;
     /**
      * Получить список объектов в прямоугольнике, определяемом двумя координатами (аргументы рассматриваются как две диагональные вершины прямоугольника)
      *
@@ -46,24 +27,15 @@ module.exports = class GEO {
      * @param {number} latTwo Широта координаты вершины 2
      * @param {number} lngTwo Долгота координаты вершины 2
      */
-    getListPoligon(latOne, lngOne, latTwo, lngTwo) {
-        const data =  this.geo.find({ lat: latOne, lng: lngOne }, { lat: latTwo, lng: lngTwo })
-        return data
-    }
-
+    getListPoligon(latOne: number, lngOne: number, latTwo: number, lngTwo: number): any;
     /**
      * Получить список обьектов в радиусе круга
      * @param {number} lat Широта координаты центра
      * @param {number} lng Долгота координаты центра
      * @param {number} radiusКm Радиус круга Км.
      */
-    getListCircle(lat, lng, radiusКm) {
-        const data =  this.geo.find({ lat, lng }, radiusКm, 'km')
-        data.forEach(element => {
-            element.distance = distance(lat, lng, element.lat, element.lng)
-        })
-        data.sort(compare('distance'))
-        return data
-    }
-
+    getListCircle(lat: number, lng: number, radiusКm: number): any;
+    compare(field: any, order: any): (a: any, b: any) => any;
+    deg2rad(deg: number): number;
+    distance(lat1: number, lng1: number, lat2: number, lng2: number): number;
 }

@@ -19,10 +19,10 @@ npm install umapi_geo_city
 ## Использование
 
 ```js
-var GEO = require('umapi_geo_city')
+import Geo from "../index";
 
 // Чтобы создать новый пустой набор (дерево), выполните:
-var set = new GEO()
+const set = new Geo()
 
 // Загрузить в текущий набор города России
 set.loadCityList()
